@@ -29,3 +29,26 @@
 - ├── Startup.cs # Khởi tạo middleware, DI, SignalR
 - ├── Program.cs # Entry point
 - └── appsettings.json # File cấu hình ứng dụng
+---
+## 🔌 Danh sách API chính
+
+### 🗨️ Chat API (`ChatController`)
+| Phương thức | Endpoint                                      | Mô tả |
+|------------|-----------------------------------------------|------|
+| GET        | `/api/v1/chat/groups/{userId}/{pageIndex}/{pageSize}` | Lấy danh sách nhóm chat theo người dùng |
+| POST       | `/api/v1/chat/add-user-to-group`              | Thêm người dùng vào nhóm |
+| POST       | `/api/v1/chat/send-message`                   | Gửi tin nhắn (hỗ trợ đính kèm file) |
+| GET        | `/api/v1/chat/get-messages/{conversationId}`  | Lấy danh sách tin nhắn trong cuộc trò chuyện |
+
+### 👤 Người dùng (`UserController`)
+| Phương thức | Endpoint                          | Mô tả |
+|------------|-----------------------------------|------|
+| GET        | `/api/v1/user/{id}`              | Lấy thông tin người dùng |
+| GET        | `/api/v1/user/search/{keyword}`  | Tìm kiếm người dùng |
+| GET        | `/api/v1/user/groups/{id}`       | Lấy danh sách nhóm người dùng tham gia |
+
+### 🏢 Doanh nghiệp (`BusChatController`)
+| Phương thức | Endpoint                          | Mô tả |
+|------------|-----------------------------------|------|
+| GET        | `/api/v1/bus/users/{id}`         | Lấy danh sách user trong doanh nghiệp |
+| GET        | `/api/v1/bus/groups/{id}`        | Lấy danh sách nhóm trong doanh nghiệp |
