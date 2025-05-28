@@ -6,7 +6,7 @@
 
 ## 🛠 Công nghệ sử dụng
 
-- ASP.NET Core 6+
+- ASP.NET Core 5+
 - SignalR cho real-time communication
 - Entity Framework Core
 - SQL Server
