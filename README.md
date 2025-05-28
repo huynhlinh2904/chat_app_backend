@@ -30,7 +30,7 @@
 - ├── Program.cs # Entry point
 - └── appsettings.json # File cấu hình ứng dụng
 ---
-## 🔌 Danh sách API chính
+## 🔌 Danh sách API 
 
 ### 🗨️ Chat API (`ChatController`)
 | Phương thức | Endpoint                                      | Mô tả |
@@ -38,17 +38,20 @@
 | GET        | `/api/v1/chat/groups/{userId}/{pageIndex}/{pageSize}` | Lấy danh sách nhóm chat theo người dùng |
 | POST       | `/api/v1/chat/add-user-to-group`              | Thêm người dùng vào nhóm |
 | POST       | `/api/v1/chat/send-message`                   | Gửi tin nhắn (hỗ trợ đính kèm file) |
-| GET        | `/api/v1/chat/get-messages/{conversationId}`  | Lấy danh sách tin nhắn trong cuộc trò chuyện |
+| GET        | `/api/v1/chat/get-messages/{conversationId}/{pageIndex}/{pageSize}`  | Lấy danh sách tin nhắn trong cuộc trò chuyện |
+| POST       | `/api/v1/chat/start-conversation`                   | Tham gia chat 1 : 1 |
+| POST       | `/api/v1/chat/join-group`                   | Tham gia nhóm chat  |
+| POST       | `/api/v1/chat/create-group-conversation`                   | Tạo nhóm chat |
+| GET        | `/api/v1/chat/get-users-by-conversation/{conversationId}`  | Lấy danh sách người dùng trong nhóm chat |
+| GET        | `/api/v1/chat/get-images-by-conversation/{conversationId}` | Lấy danh sách ảnh trong nhóm chat |
+| GET        | `/api​/v1​/chat​/get-documents-by-conversation​/{conversationId}`  | Lấy danh sách file trong nhóm |
+| POST       | `/api/v1/chat/delete-message`                   | Xóa tin nhắn bản thân đã gửi  |
+| POST       | `/api/v1/chat/deleteMemberInGroup`                   | Kích người dùng ra khỏi nhóm |
+| POST       | `/api/v1/chat/transferAdmin`                   | Chuyển quyền admin nhóm chat  |  
+| POST       | `/api/v1/chat/updateGroup`                   | Cập nhật lại nhóm chat  |
 
 ### 👤 Người dùng (`UserController`)
 | Phương thức | Endpoint                          | Mô tả |
 |------------|-----------------------------------|------|
-| GET        | `/api/v1/user/{id}`              | Lấy thông tin người dùng |
-| GET        | `/api/v1/user/search/{keyword}`  | Tìm kiếm người dùng |
-| GET        | `/api/v1/user/groups/{id}`       | Lấy danh sách nhóm người dùng tham gia |
+| GET        | `/api/v1/users`              | Lấy thông tin người dùng |
 
-### 🏢 Doanh nghiệp (`BusChatController`)
-| Phương thức | Endpoint                          | Mô tả |
-|------------|-----------------------------------|------|
-| GET        | `/api/v1/bus/users/{id}`         | Lấy danh sách user trong doanh nghiệp |
-| GET        | `/api/v1/bus/groups/{id}`        | Lấy danh sách nhóm trong doanh nghiệp |
