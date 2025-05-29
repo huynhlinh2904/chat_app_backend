@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="chat-modal.css">
+
+    <script type="text/javascript" src="../../../assets/js-core/jquery-core.js"></script>
+    <script type="text/javascript" src="../../../assets/js-core/jquery-ui-core.js"></script>
+    <!--Signal-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+
+    <script type="text/javascript" src="../../common/js/Common.js"></script>
+    <script type="text/javascript" src="../../common/js/util_element.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="./js/signalR.js"></script>
+
+
+</head>
+
+<body>
+  <!-- Nút mở hộp chat -->
+  <div id="messenger-toggle">💬</div>
+
+  <!-- Hộp chat chính -->
+  <div id="chat-popup" style="display: none;">
+    <div class="chat-header">
+      <span>Đoạn chat</span>
+      <button id="close-chat">×</button>
+    </div>
+
+    <!-- Tìm kiếm -->
+    <input type="text" placeholder="Tìm kiếm trên Messenger..." class="chat-search" id="custom-filter" />
+
+    <!-- Tab chọn -->
+    <div class="chat-tabs">
+      <button class="tab active" data-tab="employees-tab">Hộp thư</button>
+      <button class="tab" data-tab="groups-tab">Nhóm</button>
+    </div>
+
+    <!-- Nội dung theo tab -->
+    <div id="tab-content">
+      <!-- Tab nhân viên -->
+      <div id="employees-tab" class="tab-btn active">
+        <div id="employee-container">
+          <div class="chat-list" id="chat-list"></div>
+        </div>
+      </div>
+
+      <!-- Tab nhóm -->
+      <div id="groups-tab" class="tab-btn">
+        <div id="resultGroup" class="resultGroup" style="margin-top: 10px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nơi chứa các chat thu nhỏ -->
+  <div id="minimized-chats" class="minimized-chats"></div>
+
+  <!-- Popup chi tiết chat -->
+  <div id="chat-detail-popup" style="display: none;">
+    <!-- Tên + avatar -->
+    <div class="chat-info-header">
+      <img id="chat-user-avatar" src="./img/avatar-default.jpg" alt="Avatar" />
+      <span id="chat-user-name">Tên người nhận</span>
+    </div>
+
+    <!-- Loading -->
+    <div id="chat-loading" style="display: none;">Đang tải tin nhắn...</div>
+
+    <!-- Khung tin nhắn -->
+    <div class="chat-box"></div>
+
+    <!-- Nút thêm thành viên (chỉ nhóm) -->
+    <button id="btn-add-user" style="display: none;">+ Thêm người</button>
+
+    <!-- Hiển thị file hoặc ảnh gửi -->
+    <div id="file-image-display"></div>
+
+    <!-- Hiển thị danh sách thành viên -->
+    <div id="member-list"></div>
+  </div>
+
+  <!-- Toast hiển thị lỗi hoặc thông báo -->
+  <div id="toast-container"></div>
+
+  <!-- JavaScript -->
+  <script src="./js/chat-modal.js"></script>
+</body>
+
+</html>

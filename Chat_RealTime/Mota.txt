@@ -1,0 +1,5 @@
+lệnh add db first
+Scaffold-DbContext "Data Source=DESKTOP-DFAHC83\HUYNHLINH;Initial Catalog=Chat_Copy;Persist Security Info=True;User ID=sa;Password=123456;Encrypt=True;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -OuputDir Models
+
+
+
